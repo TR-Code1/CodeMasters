@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <style media = "screen">
 .signup-box {
   position: absolute;
-width: 1000px;
-height: 580px;
+width: 1274px;
+height: 575px;
 left: -3px;
 top: 0.5px;
 
@@ -14,13 +20,107 @@ top: 0.5px;
 background: radial-gradient(113.28% 358.02% at -4.53% -1.9%, #97E390 0%, #6CE162 0.01%, #953EEC 100%);
 }
 
+.signup-smaller-box {
+  position: relative;
+width: 618px;
+height: 450px;
+left: 340px;
+top: 90px;
 
+background: radial-gradient(138.67% 211.85% at -13.11% 0%, rgba(255, 255, 255, 0.46) 0%, rgba(255, 255, 255, 0.24) 100%);
+border: 2px solid rgba(255, 255, 255, 0.5);
+box-sizing: border-box;
+/* User Interface Shadow 2 */
+
+box-shadow: 10px 10px 16px rgba(112, 112, 112, 0.3);
+backdrop-filter: blur(20px);
+/* Note: backdrop-filter has minimal browser support */
+
+border-radius: 20px;
+
+}
+
+.signup-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  line-height: 10px;
+}
+
+
+
+
+
+.username {
+  shadow: 2px 2px white;
+  outline: none;
+  position: relative;
+  left: 230px;
+  top: 100px;
+}
+
+.password {
+  position: absolute;
+  left: 230px;
+  top: 230px;
+}
+
+.sp {
+  position: absolute;
+  top: 250px;
+  left: 227px;
+}
+
+.sp-text {
+  position: absolute;
+  top: 235px;
+  left: 245px;
+  font-family: Verdana;
+}
+
+.email {
+  position: absolute;
+  top: 145px;
+  left: 230px;
+}
+
+.submit {
+  position: absolute;
+  top: 285px;
+  left: 275px;
+  border: 3px black;
+  background: linear-gradient(to right, rgb(137, 238, 144), rgb(120, 117, 146));
+font-family: Verdana;
+color: white;
+
+
+}
 </style>
+
+<script>
+function turnToText() {
+  var x = document.getElementById("password");
+   if (x.type === "password") {
+     x.type = "text";
+   } else {
+     x.type = "password";
+   }
+}
+</script>
 <head>
 <body>
 <div class = "signup-box">
-<p id = "signup"> Signup! </p>
+<div class = "signup-smaller-box">
+<p class = "signup-title "> Sign Up </p>
+<form autocomplete = "on">
+  <input class = "email" type = "email" placeholder = "Enter email" required> <br>
+<input class = "username" type = "text" placeholder = "Enter username" required> <br>
+<input class = "password" id = "password" type = "password" placeholder = "Enter password" required> <br> <br>
+<input class = "sp" type = "checkbox" onclick = "turnToText()"> <p class = "sp-text"> Show Password </p>
+<input class = "submit" type = "submit" value = "Register">  </input>
+</form>
 
+</div>
 </div>
 </body>
 </html>
